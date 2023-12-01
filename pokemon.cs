@@ -3,25 +3,42 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-namespace Emne3_KlasserOgProperties
+public class Pokemon
 {
-    internal class pokemon
+    public string Name { get; set; }
+    public int Health { get; set; }
+    public int Level { get; set; }
+
+    public Pokemon(string name, int health, int level)
     {
-        public string Name { get; set; }
-        public int Health { get; set; }
-        public int Level { get; set; }
+        Name = name;
+        Health = health;
+        Level = level;
+    }
 
-        public pokemon(string name, int health, int level)
-        {
-            Name = name;
-            Health = health;
-            Level = level;
-        }
+    public void printInfo(int x, int y)
+    {
+        ConsoleColor cyan = ConsoleColor.Cyan;
+        ConsoleColor black = ConsoleColor.Black;
+        ConsoleColor white = ConsoleColor.White;
+        ConsoleColor red = ConsoleColor.Red;
+        
+        Console.BackgroundColor = cyan;
+        Console.ForegroundColor = black;
+        Console.SetCursorPosition(x, y);
+        Console.WriteLine($"Pokemon name: {Name}");
+        Console.ResetColor();
 
-        public void showInfo()
-        {
-           console.WriteLine($)
-        }
+        Console.BackgroundColor = white;
+        Console.ForegroundColor = red;
+        Console.SetCursorPosition(x, y + 1);
+        Console.WriteLine($"Pokemon health: {Health}hp");
+        Console.ResetColor();
+
+        Console.BackgroundColor = red;
+        Console.ForegroundColor = black;
+        Console.SetCursorPosition(x, y + 2);
+        Console.WriteLine($"Pokemon level: {Level}");
+        Console.ResetColor();
     }
 }
